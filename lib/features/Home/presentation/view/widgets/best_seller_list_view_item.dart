@@ -1,3 +1,4 @@
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 125,
       child: Row(
         children: [
           AspectRatio(
@@ -24,26 +25,42 @@ class BestSellerListViewItem extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.5,
-            child: const Column(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Harry potte and the goblet of fire',
-                  style: Styles.textStyle20,
+                  'Harry Potter and the Goblet of Fire',
+                  style:
+                      Styles.textStyle20.copyWith(fontFamily: gtSectraFineFont),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
-                Text('rudyard kipling'),
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
+                  'J.K. Rowlling',
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(r'19.99 $'),
+                    Text(
+                      r'19.99 $',
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
                     // SizedBox(
                     //   width: 40,
                     // ),
-                    Icon(
+                    const Icon(
                       Icons.star,
                       size: 12,
                     ),
-                    Text('4.8[2390]'),
+                    const Text('4.8[2390]'),
                   ],
                 )
               ],
