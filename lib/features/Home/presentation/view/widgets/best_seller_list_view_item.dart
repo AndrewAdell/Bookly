@@ -46,21 +46,39 @@ class BestSellerListViewItem extends StatelessWidget {
                   height: 3,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      r'19.99 $',
+                      '19.99 €',
                       style: Styles.textStyle20
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
-                    // SizedBox(
-                    //   width: 40,
-                    // ),
-                    const Icon(
-                      Icons.star,
-                      size: 12,
+                    const SizedBox(
+                      width: 20,
                     ),
-                    const Text('4.8[2390]'),
+                    const Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          size: 12,
+                          color: Colors.yellow,
+                        ),
+                        SizedBox(
+                          width: 6.3,
+                        ),
+                        Text(
+                          '4.8',
+                          style: Styles.textStyle16,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          '(2390)',
+                          style: Styles.textStyle14,
+                        ),
+                      ],
+                    )
                   ],
                 )
               ],
