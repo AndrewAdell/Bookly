@@ -56,26 +56,27 @@ class BestSellerListViewItem extends StatelessWidget {
                     const SizedBox(
                       width: 20,
                     ),
-                    const Row(
+                    Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.star,
                           size: 12,
                           color: Colors.yellow,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 6.3,
                         ),
-                        Text(
+                        const Text(
                           '4.8',
                           style: Styles.textStyle16,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(
                           '(2390)',
-                          style: Styles.textStyle14,
+                          style: Styles.textStyle14
+                              .copyWith(color: const Color(0xff707070)),
                         ),
                       ],
                     )
