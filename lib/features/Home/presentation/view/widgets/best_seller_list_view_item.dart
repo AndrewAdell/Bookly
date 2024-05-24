@@ -2,6 +2,7 @@ import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/Home/presentation/view/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -52,7 +53,6 @@ class BestSellerListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '19.99 €',
@@ -62,30 +62,9 @@ class BestSellerListViewItem extends StatelessWidget {
                       const SizedBox(
                         width: 20,
                       ),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.star,
-                            size: 12,
-                            color: Colors.yellow,
-                          ),
-                          const SizedBox(
-                            width: 6.3,
-                          ),
-                          const Text(
-                            '4.8',
-                            style: Styles.textStyle16,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            '(2390)',
-                            style: Styles.textStyle14
-                                .copyWith(color: const Color(0xff707070)),
-                          ),
-                        ],
-                      )
+                      const BookRating(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                      ),
                     ],
                   )
                 ],
