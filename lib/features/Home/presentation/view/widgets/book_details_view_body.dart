@@ -33,9 +33,6 @@ class BookDetailsViewBody extends StatelessWidget {
                   style:
                       Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
-                  height: 6,
-                ),
                 Opacity(
                   opacity: .7,
                   child: Text(
