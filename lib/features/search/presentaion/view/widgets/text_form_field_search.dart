@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SearchTextFormField extends StatelessWidget {
-  const SearchTextFormField({super.key});
+class TextFormFieldSearch extends StatelessWidget {
+  const TextFormFieldSearch({super.key});
 
   @override
   Widget build(BuildContext context) {
