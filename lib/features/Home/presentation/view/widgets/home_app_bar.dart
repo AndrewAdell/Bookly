@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,6 @@ class HomeAppBar extends StatelessWidget {
           IconButton(
               onPressed: () {
                 GoRouter.of(context).push(AppRouter.searchView);
-                ApiService().get();
               },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
