@@ -1,13 +1,13 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 
 class ApiService {
+  final Dio _dio;
   String baseUrl = 'https://www.googleapis.com/books/v1/';
-  Future<Map<String, dynamic>> get({required String endpoint}) async {
-    http.Response response = await http.get(Uri.parse('$baseUrl$endpoint'));
-    var data = jsonDecode(response.body);
 
-    return data;
+  ApiService(this._dio);
+  Future<Map<String, dynamic>> get({required String endpoint}) async {
+    var response = await _dio.get('$baseUrl$endpoint');
+
+    return response.data;
   }
 }
