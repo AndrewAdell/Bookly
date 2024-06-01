@@ -9,11 +9,12 @@ class FeatureadBooksCubit extends Cubit<FeaturedBooksStates> {
   Future<void> featchFeaturedBooks() async {
     emit(FeaturedBooksLoadingState());
     var result = await homeRepo.fetchFeaturedBooks();
-
+    print(result);
     result.fold((failure) {
-      emit(FeaturedBooksFailureState());
+      print(failure);
+      emit(FeaturedBooksFailureState(failure.errormessage));
     }, (books) {
-      emit(FeaturedBooksSuccessState());
+      emit(FeaturedBooksSuccessState(books: books));
     });
   }
 }

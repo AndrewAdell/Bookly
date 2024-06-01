@@ -1,9 +1,13 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/core/utils/service_locator.dart';
+import 'package:bookly/features/Home/data/repos/home_repo_implementation.dart';
+import 'package:bookly/features/Home/presentation/view%20models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/Home/presentation/view/home_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'sliding_text.dart';
 
@@ -23,7 +27,6 @@ class _SplashViewbodyState extends State<SplashViewbody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-
     navigateToHome();
   }
 
