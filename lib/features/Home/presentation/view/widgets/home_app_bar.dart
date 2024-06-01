@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/service_locator.dart';
@@ -23,8 +24,6 @@ class HomeAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
               onPressed: () {
-                FeatureadBooksCubit(getIt.get<HomeRepoImpl>())
-                    .featchFeaturedBooks();
                 GoRouter.of(context).push(AppRouter.searchView);
               },
               icon: const Icon(

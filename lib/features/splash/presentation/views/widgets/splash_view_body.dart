@@ -28,6 +28,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
     super.initState();
     initSlidingAnimation();
     navigateToHome();
+    // FeatureadBooksCubit(getIt.get<HomeRepoImpl>()).featchFeaturedBooks();
   }
 
   @override
