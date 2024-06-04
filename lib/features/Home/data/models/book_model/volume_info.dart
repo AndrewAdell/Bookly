@@ -4,14 +4,14 @@ import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
 class VolumeInfo {
-  String? title;
+  String title;
   List<dynamic>? authors;
   String? publisher;
   String? publishedDate;
   String? description;
   List<IndustryIdentifier>? industryIdentifiers;
   ReadingModes? readingModes;
-  int? pageCount;
+  int pageCount;
   String? printType;
   List<dynamic>? categories;
   String? maturityRating;
@@ -25,14 +25,14 @@ class VolumeInfo {
   String? canonicalVolumeLink;
 
   VolumeInfo({
-    this.title,
+    required this.title,
     this.authors,
     this.publisher,
     this.publishedDate,
     this.description,
     this.industryIdentifiers,
     this.readingModes,
-    this.pageCount,
+    required this.pageCount,
     this.printType,
     this.categories,
     this.maturityRating,
@@ -47,7 +47,7 @@ class VolumeInfo {
   });
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-        title: json['title'] as String?,
+        title: json['title'],
         authors: json['authors'] as List<dynamic>?,
         publisher: json['publisher'] as String?,
         publishedDate: json['publishedDate'] as String?,
@@ -59,7 +59,7 @@ class VolumeInfo {
             ? null
             : ReadingModes.fromJson(
                 json['readingModes'] as Map<String, dynamic>),
-        pageCount: json['pageCount'] as int?,
+        pageCount: json['pageCount'],
         printType: json['printType'] as String?,
         categories: json['categories'] as List<dynamic>?,
         maturityRating: json['maturityRating'] as String?,

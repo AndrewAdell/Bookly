@@ -12,9 +12,11 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failures, List<BookModel>>> fetchNewestBooks() async {
     try {
-      var data = await apis.get(
-          endpoint:
-              'volumes?q=programming&Sorting=newest&filtring=free-ebooks');
+      var data = await apis
+          .get(
+              endpoint:
+                  'volumes?q=programming&Sorting=newest&filtring=free-ebooks')
+          .timeout(const Duration(seconds: 20));
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
@@ -25,27 +27,29 @@ class HomeRepoImpl implements HomeRepo {
       if (e is DioException) {
         return left(ServerFailures.fromDioError(e));
       }
-      return left(ServerFailures(e.toString()));
+      return left(ServerFailures('there is no internet connection '));
     }
   }
 
   @override
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await apis.get(
-          endpoint: 'volumes?q=programming&filtring=free-ebooks');
+      var data = await apis
+          .get(endpoint: 'volumes?q=programming&filtring=free-ebooks')
+          .timeout(const Duration(seconds: 20));
 
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
       }
-      print(books);
+
       return right(books);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailures.fromDioError(e));
       }
-      return left(ServerFailures(e.toString()));
+
+      return left(ServerFailures('there is no internet connection '));
     }
   }
 }
